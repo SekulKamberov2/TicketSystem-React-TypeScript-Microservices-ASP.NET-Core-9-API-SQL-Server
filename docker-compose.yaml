@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:  
+  helpdesk-service:
+    build:
+      context: .
+      dockerfile: GHR.HelpDesk/Dockerfile
+    ports:
+      - "5006:97" 
+      - "5007:98"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:97  
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=HelpDeskGHRDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - hotelnet
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SekulKamberov2025!@
+  
+networks:
+  hotelnet:
+    driver: bridge
+
+volumes:
+  sql_data:
+  mongo-data:
