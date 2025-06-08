@@ -11,6 +11,7 @@
     {
         Task<Result<TicketWithUserDetailsDto>> GetTicketAsync(int ticketId, CurrentUser currentUser, string? role); 
         Task<Result<IEnumerable<TicketDto>>> GetAllTicketsAsync();
+        Task<Result<IEnumerable<TicketDto>>> GetAllUserTicketsAsync(int userId);
         Task<Result<TicketDto>> CreateTicketAsync(TicketDto ticket);
         Task<Result<bool>> UpdateTicketAsync(TicketDto ticket);
         Task<Result<bool>> DeleteTicketAsync(int ticketId);
@@ -43,8 +44,8 @@
                 if (ticket == null)
                     return Result<TicketWithUserDetailsDto>.Failure("Ticket not found.", 404);
                
-                //if (ticket.UserId != currentUser.Id && role != "HD ADMIN")
-                    //return Result<TicketWithUserDetailsDto>.Failure("Unauthorized access to this ticket.", 401);
+                if (ticket.UserId != currentUser.Id && role != "HD ADMIN")
+                    return Result<TicketWithUserDetailsDto>.Failure("Unauthorized access to this ticket.", 401);
                 
                 var result = new TicketWithUserDetailsDto
                 {
@@ -78,7 +79,34 @@
         {
             try
             {
-                var tickets = await _ticketRepository.GetAllAsync(); 
+                var tickets = await _ticketRepository.GetAllAsync();
+                var result = tickets.Select(ticket => new TicketDto
+                {
+                    Id = ticket.Id,
+                    Title = ticket.Title,
+                    Description = ticket.Description,
+                    UserId = ticket.UserId,
+                    StaffId = ticket.StaffId,
+                    DepartmentId = ticket.DepartmentId,
+                    LocationId = ticket.LocationId,
+                    CategoryId = ticket.CategoryId,
+                    PriorityId = ticket.PriorityId,
+                    StatusId = ticket.StatusId,
+                    CreatedAt = ticket.CreatedAt,
+                    UpdatedAt = ticket.UpdatedAt
+                });
+                return Result<IEnumerable<TicketDto>>.Success(result);
+            }
+            catch
+            {
+                return Result<IEnumerable<TicketDto>>.Failure("An error occurred while fetching tickets. Please try again later.", 500);
+            }
+        } 
+        public async Task<Result<IEnumerable<TicketDto>>> GetAllUserTicketsAsync(int userId)
+        { 
+            try
+            {
+                var tickets = await _ticketRepository.GetAllUserTicketsAsync(userId);
                 var result = tickets.Select(ticket => new TicketDto
                 {
                     Id = ticket.Id,
@@ -101,6 +129,7 @@
                 return Result<IEnumerable<TicketDto>>.Failure("An error occurred while fetching tickets. Please try again later.", 500);
             }
         }
+         
 
         public async Task<Result<TicketDto>> CreateTicketAsync(TicketDto ticketDto)
         {
@@ -123,9 +152,9 @@
                     CreatedAt = ticketDto.CreatedAt,
                     TicketTypeId = ticketDto.TicketTypeId  
                 };
-            
-                var id = await _ticketRepository.CreateAsync(entity); 
-                if (id == 0)
+
+                var id = await _ticketRepository.CreateAsync(entity);
+                if(id == 0)
                     return Result<TicketDto>.Failure($"Failed to create the ticket", 500);
 
                 ticketDto.Id = id;  
@@ -526,6 +555,6 @@
                 return Result<PagedResult<TicketDto>>.Failure("Failed to get filtered tickets.", 500);
             }
         }
-
+         
     }
 }

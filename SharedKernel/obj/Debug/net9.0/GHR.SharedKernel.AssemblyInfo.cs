@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GHR.SharedKernel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1539246e0e84e2f8ba246678e0253546ac9904de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5802766ae19085c53e42fd9206c7befe4244bb99")]
 [assembly: System.Reflection.AssemblyProductAttribute("GHR.SharedKernel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GHR.SharedKernel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\ghr.helpdesk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|solutionrelative:ghr.helpdesk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{699D8489-6EF2-F7F8-FFA5-B7B315E33C56}|GHR.IdentityServer\\IdentityServer.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\ghr.identityserver\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{699D8489-6EF2-F7F8-FFA5-B7B315E33C56}|GHR.IdentityServer\\IdentityServer.csproj|solutionrelative:ghr.identityserver\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\ghr.helpdesk\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|solutionrelative:ghr.helpdesk\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B81826A8-5C3D-4063-9F7A-9A5A9863BC45}|OcelotApiGateway\\OcelotApiGateway.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\ocelotapigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B81826A8-5C3D-4063-9F7A-9A5A9863BC45}|OcelotApiGateway\\OcelotApiGateway.csproj|solutionrelative:ocelotapigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{57414928-2AA1-40B8-B38E-817D335AE486}|SharedKernel\\GHR.SharedKernel.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\sharedkernel\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57414928-2AA1-40B8-B38E-817D335AE486}|SharedKernel\\GHR.SharedKernel.csproj|solutionrelative:sharedkernel\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|c:\\users\\sekne\\onedrive\\desktop\\ticket-system-react-typescript-microservices-asp.net-core-9-api-sql-server\\ghr.helpdesk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C04927E-58BC-443E-A657-8D83352C4CF6}|GHR.HelpDesk\\GHR.HelpDesk.csproj|solutionrelative:ghr.helpdesk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,47 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Result.cs",
-              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\SharedKernel\\Result.cs",
-              "RelativeDocumentMoniker": "SharedKernel\\Result.cs",
-              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\SharedKernel\\Result.cs",
-              "RelativeToolTip": "SharedKernel\\Result.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswBoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:17:15.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Program.cs",
-              "RelativeDocumentMoniker": "GHR.HelpDesk\\Program.cs",
-              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Program.cs",
-              "RelativeToolTip": "GHR.HelpDesk\\Program.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAQwE4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T19:53:47.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TicketService.cs",
-              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Services\\TicketService.cs",
-              "RelativeDocumentMoniker": "GHR.HelpDesk\\Services\\TicketService.cs",
-              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Services\\TicketService.cs",
-              "RelativeToolTip": "GHR.HelpDesk\\Services\\TicketService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwC4AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T19:40:57.758Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:5:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
@@ -86,6 +55,68 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Dockerfile",
+              "RelativeDocumentMoniker": "GHR.HelpDesk\\Dockerfile",
+              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Dockerfile",
+              "RelativeToolTip": "GHR.HelpDesk\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-08T06:12:37.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.IdentityServer\\Dockerfile",
+              "RelativeDocumentMoniker": "GHR.IdentityServer\\Dockerfile",
+              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.IdentityServer\\Dockerfile",
+              "RelativeToolTip": "GHR.IdentityServer\\Dockerfile",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-08T06:06:11.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\SharedKernel\\Result.cs",
+              "RelativeDocumentMoniker": "SharedKernel\\Result.cs",
+              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\SharedKernel\\Result.cs",
+              "RelativeToolTip": "SharedKernel\\Result.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswBoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T20:17:15.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Program.cs",
+              "RelativeDocumentMoniker": "GHR.HelpDesk\\Program.cs",
+              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Program.cs",
+              "RelativeToolTip": "GHR.HelpDesk\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T19:53:47.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TicketService.cs",
+              "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Services\\TicketService.cs",
+              "RelativeDocumentMoniker": "GHR.HelpDesk\\Services\\TicketService.cs",
+              "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Services\\TicketService.cs",
+              "RelativeToolTip": "GHR.HelpDesk\\Services\\TicketService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwC4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T19:40:57.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TicketsController.cs",
               "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\Controllers\\TicketsController.cs",
               "RelativeDocumentMoniker": "GHR.HelpDesk\\Controllers\\TicketsController.cs",
@@ -93,21 +124,19 @@
               "RelativeToolTip": "GHR.HelpDesk\\Controllers\\TicketsController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAABYAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T19:40:11.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T19:40:11.725Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ocelot.json",
               "DocumentMoniker": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\OcelotApiGateway\\ocelot.json",
               "RelativeDocumentMoniker": "OcelotApiGateway\\ocelot.json",
               "ToolTip": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\OcelotApiGateway\\ocelot.json",
               "RelativeToolTip": "OcelotApiGateway\\ocelot.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-07T19:26:24.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T19:26:24.473Z"
             }
           ]
         }

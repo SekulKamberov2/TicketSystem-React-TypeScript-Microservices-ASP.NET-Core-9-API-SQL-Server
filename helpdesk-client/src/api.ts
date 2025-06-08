@@ -39,6 +39,16 @@ export interface TicketCreateDto {
   description: string;
 }
 
-export const getTickets = () => api.get<Result<Ticket[]>>('/tickets');
+//export const getTickets = () => api.get<Result<Ticket[]>>('/tickets/my-tickets');
 export const getTicket = (id: number) => api.get<Result<UserTicket>>(`/tickets/${id}`);
+export const getTickets = () => {
+  const token = localStorage.getItem('token');  
+
+  return api.get<Result<Ticket[]>>('/tickets/my-tickets', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+};
+
 export const createTicket = (ticket: TicketCreateDto) => api.post('/tickets', ticket);

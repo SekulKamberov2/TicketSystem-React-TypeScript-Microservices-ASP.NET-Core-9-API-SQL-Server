@@ -1,0 +1,243 @@
+version: '3.8'
+
+services:
+  ocelot-gateway:
+    build:
+      context: .
+      dockerfile: OcelotApiGateway/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - duty-service
+      - identity-service
+      - hr-platform-service
+      - helpdesk-service 
+    networks:
+      - hotelnet
+
+  duty-service:
+    build:
+      context: .
+      dockerfile: GHR.DutyManagement/Dockerfile
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=DutyManagementDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - hotelnet
+
+  identity-service:
+    build:
+      context: .
+      dockerfile: IdentityServer/Dockerfile
+    ports:
+      - "5001:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=IdentityGHRDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+
+  hr-platform-service:
+    build:
+      context: .
+      dockerfile: GHR.HRPlatform/Dockerfile
+    ports:
+      - "5003:8082"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+
+  helpdesk-service:
+    build:
+      context: .
+      dockerfile: GHR.HelpDesk/Dockerfile
+    ports:
+      - "5006:97" 
+      - "5007:98"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:97  
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=HelpDeskGHRDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - hotelnet
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SekulKamberov2025!@
+
+  identity-client:
+    build:
+      context: ./IdentityClient
+      dockerfile: Dockerfile
+    ports:
+      - "3003:90"  
+    networks:
+      - hotelnet
+    depends_on:
+      - ocelot-gateway
+
+  leave-management:
+    build:
+      context: .
+      dockerfile: GHR.LeaveManagement/Dockerfile
+    ports:
+      - "5004:95"
+      - "5005:96"
+      - "7000:97"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:95
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=LeaveManagementGHRDB;User Id=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+      
+  rating-service:
+    build:
+      context: .
+      dockerfile: GHR.Rating/Dockerfile
+    ports:
+      - "5008:99"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:99
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=RatingGHRDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet 
+
+  casino:
+    build:
+      context: ./GHR.Casino
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/casino-db
+    depends_on:
+      - mongo
+    networks:
+      - hotelnet
+      
+  fitness-service:
+    build:
+      context: ./GHR.Fitness
+      dockerfile: Dockerfile
+    ports:
+      - "3021:3021"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/fitness-db
+      - PORT=3021
+      - JWT_SECRET="super-secret-key-diojszh$%^$*^^&TYGxduiashauish$@#%#^$&TIGYOTF%$E#^%$%^$*^^&TYGYF^$E#$%E%$"
+      - JWT_ISSUER=Grant Hotel Resort
+      - JWT_AUDIENCE=my-app-Grant Hotel Resort
+    depends_on:
+      - mongo
+    networks:
+      - hotelnet
+
+  employee-service:
+    build:
+      context: .
+      dockerfile: GHR.EmployeeManagement/Dockerfile
+    ports:
+      - "7010:7010"
+      - "7011:7011"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7010;http://+:7011
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=EmployeeManagementDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+    networks:
+      - hotelnet
+      
+  room-management:
+    build:
+      context: .
+      dockerfile: GHR.RoomManagement/Dockerfile
+    ports:
+      - "5093:93"
+      - "5094:94"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:93;http://+:94
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=RoomManagementDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - hotelnet 
+      
+  dfm-service:
+    build:
+      context: .
+      dockerfile: GHR.DFM/Dockerfile
+    ports:
+      - "6002:6060"
+      - "6003:6061"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:6060;http://+:6061
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=DFMDB;User=sa;Password=SekulKamberov2025!@;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - hotelnet
+
+      
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - hotelnet
+      
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"     # backend communication
+      - "15672:15672"   # RabbitMQ management UI
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - hotelnet
+
+
+networks:
+  hotelnet:
+    driver: bridge
+
+volumes:
+  sql_data:
+  mongo-data:

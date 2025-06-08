@@ -1,6 +1,34 @@
 ﻿{
   "Routes": [
     {
+      "DownstreamPathTemplate": "/api/tickets/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "helpdesk-service",
+          "Port": 97
+        }
+      ],
+      "UpstreamPathTemplate": "/api/tickets/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/users/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -10,7 +38,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/users/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ], 
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
       "RateLimitOptions": {
         "EnableRateLimiting": true,
         "Period": "1m",
@@ -25,19 +57,52 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/tickets/{everything*}",
+      "DownstreamPathTemplate": "/api/duties/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "helpdesk-service",
-          "Port": 97
+          "Host": "duty-service",
+          "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/tickets/{everything*}",
+      "UpstreamPathTemplate": "/api/duty/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
       "RateLimitOptions": {
         "EnableRateLimiting": true,
         "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 15
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/hr/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "hr-platform-service",
+          "Port": 8082
+        }
+      ],
+      "UpstreamPathTemplate": "/api/hr/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
         "Limit": 10
       },
       "AddHeadersToRequest": {
@@ -46,6 +111,178 @@
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/leave/user/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "leave-management",
+          "Port": 95
+        }
+      ],
+      "UpstreamPathTemplate": "/api/leave/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/rating/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "rating-service",
+          "Port": 99
+        }
+      ],
+      "UpstreamPathTemplate": "/api/rating/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/users/me/info/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/users/me/info/{userId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Key": "Identity",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 20
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/leave/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/leave/user/{userId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Key": "Leave",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/rating/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5008
+        }
+      ],
+      "UpstreamPathTemplate": "/api/rating/user/{userId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Key": "Rating",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/room/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "room-management",
+          "Port": 93
+        }
+      ],
+      "UpstreamPathTemplate": "/api/room/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 10
+      },
+      "AddHeadersToRequest": {
+        "X-Gateway-From": "Ocelot"
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    }
+  ]
+}
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [ 
+        "Identity",
+        "Leave"  
+      ],
+      "UpstreamPathTemplate": "/aggregate/user-info/{userId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Aggregator": "CustomAggregator"
     }
   ],
   "GlobalConfiguration": {
