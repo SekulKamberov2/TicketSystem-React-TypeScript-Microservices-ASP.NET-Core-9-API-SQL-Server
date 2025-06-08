@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GHR.HelpDesk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39924ed967fd5f8357def27a401cf2d5ada60784")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1539246e0e84e2f8ba246678e0253546ac9904de")]
 [assembly: System.Reflection.AssemblyProductAttribute("GHR.HelpDesk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GHR.HelpDesk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -43,8 +43,8 @@
                 if (ticket == null)
                     return Result<TicketWithUserDetailsDto>.Failure("Ticket not found.", 404);
                
-                if (ticket.UserId != currentUser.Id && role != "HD ADMIN")
-                    return Result<TicketWithUserDetailsDto>.Failure("Unauthorized access to this ticket.", 401);
+                //if (ticket.UserId != currentUser.Id && role != "HD ADMIN")
+                    //return Result<TicketWithUserDetailsDto>.Failure("Unauthorized access to this ticket.", 401);
                 
                 var result = new TicketWithUserDetailsDto
                 {
@@ -78,7 +78,7 @@
         {
             try
             {
-                var tickets = await _ticketRepository.GetAllAsync();
+                var tickets = await _ticketRepository.GetAllAsync(); 
                 var result = tickets.Select(ticket => new TicketDto
                 {
                     Id = ticket.Id,
@@ -123,9 +123,9 @@
                     CreatedAt = ticketDto.CreatedAt,
                     TicketTypeId = ticketDto.TicketTypeId  
                 };
-
-                var id = await _ticketRepository.CreateAsync(entity);
-                if(id == 0)
+            
+                var id = await _ticketRepository.CreateAsync(entity); 
+                if (id == 0)
                     return Result<TicketDto>.Failure($"Failed to create the ticket", 500);
 
                 ticketDto.Id = id;  

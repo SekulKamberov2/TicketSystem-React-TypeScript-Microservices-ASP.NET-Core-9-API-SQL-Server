@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RBm6EaMwP9M=",
+  "dgSpecHash": "RL457MXRAvc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekne\\OneDrive\\Desktop\\Grant-Hotel-Resort-Microservices-Ocelot-SQL-Server-ASP.NET-Core-9-API-CQRS-MediatR-React-TS\\GHR\\GHR.HelpDesk\\GHR.HelpDesk.csproj",
+  "projectFilePath": "C:\\Users\\sekne\\OneDrive\\Desktop\\Ticket-System-React-TypeScript-Microservices-ASP.NET-Core-9-API-SQL-Server\\GHR.HelpDesk\\GHR.HelpDesk.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekne\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\sekne\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
